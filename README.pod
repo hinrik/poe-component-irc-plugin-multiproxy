@@ -1,0 +1,102 @@
+=encoding utf8
+
+=head1 NAME
+
+POE::Component::IRC::Plugin::MultiProxy - A multi-server IRC proxy
+
+=head1 SYNOPSIS
+
+ use POE::Component::IRC::Plugin::MultiProxy;
+
+ my $proxy = POE::Component::IRC::Plugin::MultiProxy->new(
+     Listen_port = 12345,
+     Password    = 'foobar',
+ );
+
+ $irc->plugin_add(
+     MultiProxy => $proxy,
+     network    => 'freenode',
+ );
+
+=head1 METHODS
+
+=head2 C<new>
+
+Creates a new MultiProxy plugin object. Takes the following arguments:
+
+B<'Password'> (required), the password you will use when connecting to the
+proxy.
+
+B<'Listen_port'> (required), the port you want the proxy to listen on.
+
+B<'Listen_host'> (optional), the host you want the proxy to listen on.
+Defaults to '0.0.0.0'.
+
+B<'Away_msg'> (optional), the away message you want to use when no clients
+are connected.
+
+B<'SSL_key'>, the name of a file containing an SSL key for the listener to
+use, if you want to enable SSL.
+
+B<'SSL_cert'>, the name of a file containing an SSL certificate for the
+listener to use, if you want to enable SSL.
+
+B<'Recall_mode'>, how you want messages to be recalled. Available modes are:
+
+=over 4
+
+=item B<'missed'> (the default): MultiProxy will only recall the channel
+messages you missed since the last time you detached from MultiProxy.
+
+=item B<'none'>: MultiProxy will not recall any channel messages.
+
+=item B<'all'>: MultiProxy will recall all channel messages.
+
+=back
+
+B<Note>: MultiProxy will always recall I<private messages> that you missed while
+you were away, regardless of this option.
+
+=head1 TODO
+
+Look into using L<POE::Component::Server::IRC|POE::Component::Server::IRC> as
+an intermediary for multiple clients.
+
+Keep recall messages away from prying eyes, instead of in F</tmp>.
+
+Add proper tests.
+
+=head1 AUTHOR
+
+Hinrik E<Ouml>rn SigurE<eth>sson, hinrik.sig@gmail.com
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright 2008-2010 Hinrik E<Ouml>rn SigurE<eth>sson
+
+This program is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=head1 SEE ALSO
+
+Other useful IRC bouncers:
+
+=over
+
+=item L<http://miau.sourceforge.net>
+
+=item L<http://znc.sourceforge.net>
+
+=item L<http://code.google.com/p/dircproxy/>
+
+=item L<http://www.ctrlproxy.org>
+
+=item L<http://www.psybnc.at>
+
+=item L<http://irssi.org/documentation/proxy>
+
+=item L<http://freshmeat.net/projects/bip>
+
+=back
+
+=cut
