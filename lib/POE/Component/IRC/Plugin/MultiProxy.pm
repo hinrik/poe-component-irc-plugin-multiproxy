@@ -206,6 +206,41 @@ POE::Component::IRC::Plugin::MultiProxy - A multi-server IRC proxy
 
 =head1 SYNOPSIS
 
+To quickly get an IRC client with this plugin up and running, you can use
+L<App::Pocoirc|App::Pocoirc> with a (YAML) configuration like this:
+
+ global_plugins:
+   - [MultiProxy, {
+       Password: foo,
+       Listen_port: 12345,
+     }]
+
+ networks:
+   freenode:
+      server: irc.freenode.net
+      nick: thisisme
+      local_plugins:
+        - [NickReclaim]
+        - [Connector]
+        - [AutoJoin, {
+            Channels: ["#foobar", "#foobaz"]
+          }]
+   oftc:
+      server: irc.oftc.net
+      nick: thisismetoo
+      local_plugins:
+        - [NickReclaim]
+        - [Connector]
+        - [AutoJoin, {
+            Channels: ["#barfoo", "#bazfoo"]
+          }]
+
+Then you start it with C<pocoirc -f your_config.yml> and connect your IRC
+client to port 12345 on that host, with 'foo' as the password and one of the
+network names as the nickname.
+
+Or you can use the modile in your own code:
+
  use POE::Component::IRC::Plugin::MultiProxy;
 
  my $proxy = POE::Component::IRC::Plugin::MultiProxy->new(
