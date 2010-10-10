@@ -299,13 +299,13 @@ sub recall {
 
 =head1 NAME
 
-POE::Compoent::IRC::Plugin::MultiProxy::Recall - A PoCo-IRC plugin which can greet proxy clients with the messages they missed while they were away
+POE::Component::IRC::Plugin::MultiProxy::Recall - A PoCo-IRC plugin which can greet proxy clients with the messages they missed while they were away
 
 =head1 SYNOPSIS
 
- use POE::Compoent::IRC::Plugin::MultiProxy::Recall;
+ use POE::Component::IRC::Plugin::MultiProxy::Recall;
 
- $irc->plugin_add('Recall', POE::Compoent::IRC::Plugin::MultiProxy::Recall->new( Mode => 'missed' ));
+ $irc->plugin_add('Recall', POE::Component::IRC::Plugin::MultiProxy::Recall->new( Mode => 'missed' ));
 
 =head1 DESCRIPTION
 

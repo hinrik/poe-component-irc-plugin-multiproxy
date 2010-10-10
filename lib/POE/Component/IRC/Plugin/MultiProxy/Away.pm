@@ -79,13 +79,13 @@ POE::Component::IRC::Plugin::MultiProxy::Away - A PoCo-IRC plugin which changes 
 
 =head1 SYNOPSIS
 
- use POE::Compoent::IRC::Plugin::MultiProxy::Away;
+ use POE::Component::IRC::Plugin::MultiProxy::Away;
 
- $irc->plugin_add('Away', POE::Compoent::IRC::Plugin::MultiProxy::Away->new(Message => "I'm out to lunch"));
+ $irc->plugin_add('Away', POE::Component::IRC::Plugin::MultiProxy::Away->new(Message => "I'm out to lunch"));
 
 =head1 DESCRIPTION
 
-POE::Compoent::IRC::Plugin::MultiProxy::Away is a
+POE::Component::IRC::Plugin::MultiProxy::Away is a
 L<POE::Component::IRC|POE::Component::IRC> plugin. When the last proxy clien
 detaches, it changes the status to away, with the supplied away message.
 

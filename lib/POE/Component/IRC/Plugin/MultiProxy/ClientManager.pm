@@ -204,17 +204,17 @@ sub _put {
 
 =head1 NAME
 
-POE::Compoent::IRC::Plugin::MultiProxy::ClientManager - A PoCo-IRC plugin which handles a proxy clients
+POE::Component::IRC::Plugin::MultiProxy::ClientManager - A PoCo-IRC plugin which handles a proxy clients
 
 =head1 SYNOPSIS
 
- use POE::Compoent::IRC::Plugin::MultiProxy::ClientManager;
+ use POE::Component::IRC::Plugin::MultiProxy::ClientManager;
 
- $irc->plugin_add('MultiProxyClient_1', POE::Compoent::IRC::Plugin::MultiProxy::Client->new());
+ $irc->plugin_add('MultiProxyClient_1', POE::Component::IRC::Plugin::MultiProxy::Client->new());
 
 =head1 DESCRIPTION
 
-POE::Compoent::IRC::Plugin::MultiProxy::Client is a
+POE::Component::IRC::Plugin::MultiProxy::Client is a
 L<POE::Component::IRC|POE::Component::IRC> plugin. It handles a input/output
 and disconnects from a proxy client.
 

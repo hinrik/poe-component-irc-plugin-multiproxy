@@ -388,17 +388,17 @@ sub mode_reply {
 
 =head1 NAME
 
-POE::Compoent::IRC::Plugin::MultiProxy::State - Generates IRC server replies based on information provided by POE::Component::IRC::State
+POE::Component::IRC::Plugin::MultiProxy::State - A PoCo-IRC plugin which generates IRC server replies based on information provided by POE::Component::IRC::State
 
 =head1 SYNOPSIS
 
- use POE::Compoent::IRC::Plugin::MultiProxy::State;
+ use POE::Component::IRC::Plugin::MultiProxy::State;
 
- $irc->plugin_add('State', POE::Compoent::IRC::Plugin::MultiProxy::State->new());
+ $irc->plugin_add('State', POE::Component::IRC::Plugin::MultiProxy::State->new());
 
 =head1 DESCRIPTION
 
-POE::Compoent::IRC::Plugin::MultiProxy::::State is a
+POE::Component::IRC::Plugin::MultiProxy::::State is a
 L<POE::Component::IRC|POE::Component::IRC> plugin. Its role is to use
 L<POE::Component::IRC::State|POE::Component::IRC::State>'s information as a
 cache so that fewer trips will be to the IRC server when clients submit
